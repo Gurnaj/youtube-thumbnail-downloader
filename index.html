@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="main.css">
+        <script src="https://kit.fontawesome.com/72aca86cc7.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header class="main-header">
+            <div class="logo-container">
+                <a href="" class="cta">YOUTUBE THUMBNAIL</a>
+            </div>
+            <nav class="main-nav">
+                <ul class="list_items">
+                    <li class="list_item"><a href="Contact/index.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="curved">
+                <h1>Download <span>Youtube</span> Thumbnails</h1>
+                <p>Paste the URL of youtube video below and then click on Download</p>
+            </section>
+            <section class="main-content">
+                <img id="thumbnail" src="Screenshot 2022-03-01 230258.png" class="thumbnail box" />
+                <div class="box-2">
+                    <input type="url" id="videoLinkInput" class="videoLinkInput w-100" placeholder="Paste the Youtube URL">
+                    <button id="downloadButton" class="downloadButton d-none" type="button"><i class="fa-solid fa-circle-arrow-down"></i>  Download</button>
+                </div>
+            </section>
+            <section class="overview">
+                <h2>How to Download Youtube Thumbnails</h2>
+                <ul>
+                    <li>
+                        <div><i class="fa-solid fa-paste"></i></div>
+                        <h3>Paste Youtube Video URL</h3>
+                    </li>
+                    <li>
+                        <div><i class="fa-solid fa-download"></i></div>
+                        <h3>Click on Download Button</h3>
+                    </li>
+                    <li>
+                        <div><i class="fa-solid fa-image"></i></div>
+                        <h3>Save the Image</h3>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="enroll">
+                <h1>We Appreciate Your Queries</h1>
+                <a href="../Contact/index.html">CONTACT US</a>
+            </section>
+        </main>
+
+        <footer>
+            <div>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+            </div>
+            <h4>Made with <i class="far fa-heart" aria-hidden="true"></i> by Gurnaj Singh</h4>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <script type="text/javascript">
+            if(window.jQuery && window.jQuery.ajaxSetup) {
+                window.jQuery.ajaxSetup({
+                    beforeSend: function(xhr, settings) {
+                        if(settings && settings.url && (settings.url.includes('/integrations/airtable/') || settings.url.includes('/v1/applications/8f7af9fb-a550-425d-b327-48195c193a5f'))){
+                            xhr.setRequestHeader('softr-page-id', '22731c1c-deb4-49e6-9672-a5e3fd6f4e49');
+                        }
+                    }
+                });
+            }
+        
+            ;(function () {   $('#header1 .navbar-toggler-icon').on('click', function () {  $('#header1 .mob-menu-content').addClass('show');   });    $('#header1 .navbar-close').on('click', function () {  $('#header1 .mob-menu-content').removeClass('show');   });    oneButtonView($(window));    $(window).on('resize', function () {  var win = $(this);  oneButtonView(win)   });    /* close the mobile menu */   $('#header1 .mob-menu-body a').click(function () {  if ($(this).attr('aria-controls')) {    return;  }  $('#header1 .mob-menu-content').removeClass('show');   });    var bgColor = window.getComputedStyle(document.querySelector('nav#header1'), null).getPropertyValue('background-color');   if (lightOrDark(bgColor) === 'dark') {  $('nav#header1').removeClass('navbar-light');  $('nav#header1').addClass('navbar-dark');   $('#header1 .navbar-close i').css('color', '#ffffff');   $('#header1 .arrow').css('border-left', '2px solid #ffffff');  $('#header1 .arrow').css('border-top', '2px solid #ffffff');   }   profileIconSizeCalculation();   $('#header1 a.dropdown-item').hover(function () {  $(this).css('background-color', bgColor);   });    $('#header1 .navbar-nav .dropdown-menu').css('background-color', bgColor);   $('#header1 .mob-menu-content').css('background-color', bgColor);   $('#header1 .link').css('background-color', bgColor);     function lightOrDark(color) {   /* Variables for red, green, blue values */  var r, g, b, hsp;   /* Check the format of the color, HEX or RGB? */  if (color.match(/^rgb/)) {     /* If HEX --> store the red, green, blue values in separate variables */    color = color.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+(?:\.\d+)?))?\)$/);     r = color[1];    g = color[2];    b = color[3];  } else {     /* If RGB --> Convert it to HEX: http://gist.github.com/983661 */    color = +("0x" + color.slice(1).replace(   color.length < 5 && /./g, '$&$&'));     r = color >> 16;    g = color >> 8 & 255;    b = color & 255;  }   /* HSP (Highly Sensitive Poo) equation from http://alienryderflex.com/hsp.html */  hsp = Math.sqrt(    0.299 * (r * r) +    0.587 * (g * g) +    0.114 * (b * b)  );   /* Using the HSP value, determine whether the color is light or dark */  if (hsp > 127.5) {     return 'light';  } else {     return 'dark';  }   }    function oneButtonView(win) {  if (win.width() <= 414) {    if ($('.navbar-nav').hasClass('empty-links') && $('.navbar-nav').hasClass('one-button')) {   if (!$('.profile-dropdown-toggle').length) {     $('.desktop-menu').hide();     $('.toggle-button').show();   }    }  }  if (win.width() <= 992 && win.width() > 414) {    if ($('.navbar-nav').hasClass('empty-links') && $('.navbar-nav').hasClass('one-button')) {   $('.desktop-menu').show();   $('.toggle-button').hide();    }  }  if (win.width() <= 992) {    if ($('.navbar-nav').hasClass('empty-links') && $('.navbar-nav').hasClass('empty-buttons')) {   $('.desktop-menu').show();   $('.toggle-button').hide();    }  }   }    function signout() {  deleteCookie('jwtToken');  window.location.href = '/';   }    function deleteCookie(name) {  document.cookie = name + "=;path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;" + 'SameSite=None; Secure';   }    function profileIconSizeCalculation() {  const headerLinks = document.querySelector('nav#header1 .nav-item a');  if (!headerLinks) {    return;  }  const fSize = window.getComputedStyle(headerLinks, null).getPropertyValue('font-size');  if (fSize <= '16px') {    $('#header1 .nav-item.dropdown a.profile-dropdown-toggle').css({   'width': '24px',   'height': '24px',    });  } else if (fSize > '16px' && fSize <= '24px') {    $('#header1 .nav-item.dropdown a.profile-dropdown-toggle').css({   'width': '30px',   'height': '30px',    });  } else {    $('#header1 .nav-item.dropdown a.profile-dropdown-toggle').css({   'width': '34px',   'height': '34px',    });  }   }    $("a[href='action:signout']").click(function (event) {  event.preventDefault();  signout();   });  })();  ;(function () {   appendStyle('https://cdn.quilljs.com/1.3.7/quill.core.css');   function appendStyle(filepath) {   if ($('head link[href="' + filepath + '"]').length > 0)    return;    var ele = document.createElement('link');   ele.setAttribute("type", "text/css");   ele.setAttribute("rel", "Stylesheet");   ele.setAttribute("href", filepath);   $('head').append(ele);  } })(); ;(function () {   appendStyle('https://cdn.quilljs.com/1.3.7/quill.core.css');   function appendStyle(filepath) {   if ($('head link[href="' + filepath + '"]').length > 0)    return;    var ele = document.createElement('link');   ele.setAttribute("type", "text/css");   ele.setAttribute("rel", "Stylesheet");   ele.setAttribute("href", filepath);   $('head').append(ele);  } })(); ;(function () {   appendStyle('https://cdn.quilljs.com/1.3.7/quill.core.css');   function appendStyle(filepath) {   if ($('head link[href="' + filepath + '"]').length > 0)    return;    var ele = document.createElement('link');   ele.setAttribute("type", "text/css");   ele.setAttribute("rel", "Stylesheet");   ele.setAttribute("href", filepath);   $('head').append(ele);  } })(); 
+        </script>
+
+        <script src="https://softr-assets-eu-shared.s3.eu-central-1.amazonaws.com/softr-tools/youtube-thumbnail-downloader/script.js?t=1611659863"></script>
+    
+    </body>
+</html>
